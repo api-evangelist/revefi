@@ -1,0 +1,264 @@
+openapi: 3.1.0
+info:
+  title: Data Quality Monitors Create a Custom Data Quality Monitor Get Custom Data Quality Monitors by Artifact API
+  description: Revefi's Public API Spec
+  version: 1.0.1
+servers:
+- url: https://gateway.revefi.com/api/v1/
+tags:
+- name: Get Custom Data Quality Monitors by Artifact
+paths:
+  /monitorByArtifact:
+    get:
+      tags:
+      - Get Custom Data Quality Monitors by Artifact
+      summary: Get Custom Data Quality Monitors by Artifact
+      description: Fetch existing custom Data Quality monitors for a specific table in Revefi
+      operationId: getMonitorByArtifact
+      security:
+      - api_key: []
+      parameters:
+      - name: databaseName
+        in: query
+        description: Name of the database for the table
+        required: true
+        schema:
+          type: string
+      - name: schemaName
+        in: query
+        description: Name of the schema for the table
+        required: true
+        schema:
+          type: string
+      - name: tableName
+        in: query
+        description: Name of the table
+        required: true
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Limit on the number of monitors to fetch
+        schema:
+          type: integer
+          format: int32
+          default: 10
+          maximum: 50
+          minimum: 1
+      - name: offset
+        in: query
+        description: The number of monitors to skip before starting to collect the result set
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonitorArray'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MonitorArray'
+        '400':
+          description: Validation exception
+        '401':
+          description: Invalid API access token
+        '403':
+          description: Insufficient permissions for the API call
+        '429':
+          description: Number of requests sent exceed the rate limit
+components:
+  schemas:
+    TimeOfDay:
+      type: object
+      properties:
+        hours:
+          type: integer
+          format: int32
+          description: Hour of day (0-23) at which data collection should occur, applicable when collectionFrequency is COLLECTION_FREQUENCY_SPECIFIC
+    MonitorMetric:
+      type: object
+      properties:
+        sqlMetric:
+          type: object
+          description: The sql metric for the data quality monitor
+          $ref: '#/components/schemas/SqlMonitorInstance'
+          required: true
+    MonitorObject:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 10
+          description: Id of the data quality monitor (should be null for create monitor requests)
+          default: null
+        artifact:
+          type: object
+          description: The table for the data quality monitor
+          $ref: '#/components/schemas/Artifact'
+          required: true
+        dataSourceId:
+          type: integer
+          format: int64
+          example: 7
+          required: true
+          description: Data Source Id of the Revefi connection on which this data quality monitor will be added. Can be obtained by going to Revefi(app.revefi.com) and looking for dsId in the URL
+        collectionFrequency:
+          $ref: '#/components/schemas/CollectionFrequency'
+          required: true
+        metric:
+          type: object
+          description: The details of the metric for data quality monitor
+          $ref: '#/components/schemas/MonitorMetric'
+          required: true
+        staticThresholdsList:
+          type: array
+          description: The threshold values for the metric for data quality monitor
+          items:
+            $ref: '#/components/schemas/StaticThreshold'
+        applyOrLogic:
+          type: boolean
+          example: false
+          default: false
+          description: If the static thresholds should be applied with OR logic, default is to use AND logic
+        collectionFrequencySpecificTimesList:
+          type: array
+          description: List of specific times of day for data collection, applicable only when collectionFrequency is COLLECTION_FREQUENCY_SPECIFIC
+          items:
+            $ref: '#/components/schemas/TimeOfDay'
+      xml:
+        name: monitor
+    Artifact:
+      type: object
+      properties:
+        databaseName:
+          type: string
+          description: Name of the database for the table on which data quality monitor needs to be added
+          required: true
+        schemaName:
+          type: string
+          description: Name of the schema for the table on which data quality monitor needs to be added
+          required: true
+        tableName:
+          type: string
+          description: Name of the table on which data quality monitor needs to be added
+          required: true
+    StaticThresholdValueType:
+      description: The type of the threshold metric. See [here](https://docs.revefi.com/docs/api-enumerations#staticthresholdvaluetype) for more details.
+      example: STATIC_THRESHOLD_VALUE_TYPE_NUMERIC
+      type: string
+      enum:
+      - STATIC_THRESHOLD_VALUE_TYPE_UNSPECIFIED
+      - STATIC_THRESHOLD_VALUE_TYPE_NUMERIC
+      - STATIC_THRESHOLD_VALUE_TYPE_PERCENT_LAST_VALUE
+      - STATIC_THRESHOLD_VALUE_TYPE_PERCENT_AVERAGE
+      - STATIC_THRESHOLD_VALUE_TYPE_TIMES_STANDARD_DEVIATION
+    CollectionFrequency:
+      type: string
+      description: How often should the data quality monitor be evaluated, use hourly for every hour or daily for every day. See [here](https://docs.revefi.com/docs/api-enumerations#collection-frequency) for more details.
+      default: COLLECTION_FREQUENCY_DAILY
+      enum:
+      - COLLECTION_FREQUENCY_UNSPECIFIED
+      - COLLECTION_FREQUENCY_HOURLY
+      - COLLECTION_FREQUENCY_DAILY
+      - COLLECTION_FREQUENCY_SPECIFIC
+      - COLLECTION_FREQUENCY_ON_DATA_LOAD
+      - COLLECTION_FREQUENCY_CRON
+    SqlMonitorInstance:
+      type: object
+      properties:
+        specName:
+          $ref: '#/components/schemas/SqlSpecName'
+          required: true
+        userSpecifiedName:
+          type: string
+          description: Unique name for the data quality monitor
+          required: true
+        userSpecifiedDescription:
+          type: string
+          description: Description for the data quality monitor
+        customSql:
+          type: string
+          description: Custom sql query for the data quality monitor, only applicable if specName is CUSTOM_SQL. The query should return a single numeric value otherwise the monitor creation will fail.
+        columnName:
+          type: string
+          description: The column name for the data quality monitor, only applicable if specName is not CUSTOM_SQL or COLUMN_GROUP_UNIQUE
+        groupByColumnNames:
+          type: array
+          items:
+            type: string
+          description: Array of column names to be used in group by clause, only applicable if the specName is COLUMN_GROUP_UNIQUE
+        evaluationType:
+          $ref: '#/components/schemas/SqlMetricEvaluationType'
+          required: true
+    SqlMetricEvaluationType:
+      type: string
+      description: The type of evaluation for data quality monitor. When automatic anomaly detection is selected, Revefi will automatically identify the correct thresholds for your data quality monitor. Otherwise, static thresholds need to be provided. See [here](https://docs.revefi.com/docs/api-enumerations#sqlmetricevaluationtype) for more details.
+      default: SQL_METRIC_EVALUATION_TYPE_AUTOMATIC_ANOMALY_DETECTION
+      enum:
+      - SQL_METRIC_EVALUATION_TYPE_UNSPECIFIED
+      - SQL_METRIC_EVALUATION_TYPE_STATIC_THRESHOLD
+      - SQL_METRIC_EVALUATION_TYPE_AUTOMATIC_ANOMALY_DETECTION
+    StaticThresholdComp:
+      description: The type of comparison operation on the threshold value. See [here](https://docs.revefi.com/docs/api-enumerations#staticthresholdcomp) for more details.
+      example: STATIC_THRESHOLD_COMP_LESS_THAN
+      type: string
+      enum:
+      - STATIC_THRESHOLD_COMP_UNSPECIFIED
+      - STATIC_THRESHOLD_COMP_LESS_THAN
+      - STATIC_THRESHOLD_COMP_LESS_THAN_EQUAL_TO
+      - STATIC_THRESHOLD_COMP_EQUAL_TO
+      - STATIC_THRESHOLD_COMP_GREATER_THAN
+      - STATIC_THRESHOLD_COMP_GREATER_THAN_EQUAL_TO
+      - STATIC_THRESHOLD_COMP_BETWEEN
+    MonitorArray:
+      type: object
+      properties:
+        monitors:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitorObject'
+    StaticThreshold:
+      type: object
+      properties:
+        comp:
+          $ref: '#/components/schemas/StaticThresholdComp'
+          required: true
+        valueType:
+          $ref: '#/components/schemas/StaticThresholdValueType'
+          required: true
+        firstValue:
+          type: integer
+          format: int64
+          example: 10
+          required: true
+          description: The threshold value for data quality monitor, also the lower limit of range for STATIC_THRESHOLD_COMP_BETWEEN type data quality monitor
+        secondValue:
+          type: integer
+          format: int64
+          example: 10
+          description: The upper limit of range for data quality monitor threshold, applicable only if comp is STATIC_THRESHOLD_COMP_BETWEEN
+    SqlSpecName:
+      type: string
+      description: "The type of monitor to be created. See [here](https://docs.revefi.com/docs/api-enumerations#sqlspecname) for more details. \nIf the specName is CUSTOM_SQL, the customSql field should be provided in the monitor object.\nIf the specName is COLUMN_GROUP_UNIQUE, the groupByColumnNames field should be provided in the monitor object.\nIf the specName is SQL_CHECK_TYPE_TABLE_LOAD_WITHIN_SLA or CUSTOM_SQL or COLUMN_GROUP_UNIQUE, the columnName field should not be provided in the monitor object.\nIf the specName is not CUSTOM_SQL or COLUMN_GROUP_UNIQUE or SQL_CHECK_TYPE_TABLE_LOAD_WITHIN_SLA, the columnName field should be provided in the monitor object.\n"
+      example: COLUMN_NULL_COUNT
+      enum:
+      - COLUMN_NULL_COUNT
+      - COLUMN_DISTINCT_VALUE_COUNT
+      - COLUMN_APPROX_DISTINCT_VALUE_COUNT
+      - COLUMN_GROUP_UNIQUE
+      - CUSTOM_SQL
+      - SQL_CHECK_TYPE_TABLE_LOAD_WITHIN_SLA
+  securitySchemes:
+    api_key:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-bearer-format: bearer
+x-readme:
+  explorer-enabled: true
+  proxy-enabled: true

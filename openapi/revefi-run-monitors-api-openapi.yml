@@ -1,0 +1,103 @@
+openapi: 3.1.0
+info:
+  title: Data Quality Monitors Create a Custom Data Quality Monitor Run Monitors API
+  description: Revefi's Public API Spec
+  version: 1.0.1
+servers:
+- url: https://gateway.revefi.com/api/v1/
+tags:
+- name: Run Monitors
+paths:
+  /monitor/run:
+    post:
+      tags:
+      - Run Monitors
+      summary: Run Monitors for Artifacts
+      description: Trigger runs for monitors associated with the specified artifacts. Rate-limited to 10 requests per hour.
+      operationId: runMonitors
+      security:
+      - api_key: []
+      requestBody:
+        description: Request body specifying artifacts and optional monitor IDs to run
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RunMonitorsRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/RunMonitorsRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+        '400':
+          description: Validation exception
+        '401':
+          description: Invalid API access token
+        '403':
+          description: Insufficient permissions for the API call
+        '404':
+          description: Artifact not found in Revefi
+        '429':
+          description: Number of requests sent exceed the rate limit
+components:
+  schemas:
+    Artifact:
+      type: object
+      properties:
+        databaseName:
+          type: string
+          description: Name of the database for the table on which data quality monitor needs to be added
+          required: true
+        schemaName:
+          type: string
+          description: Name of the schema for the table on which data quality monitor needs to be added
+          required: true
+        tableName:
+          type: string
+          description: Name of the table on which data quality monitor needs to be added
+          required: true
+    RunMonitorsRequest:
+      type: object
+      properties:
+        dataSourceId:
+          type: integer
+          format: int64
+          example: 7
+          required: true
+          description: Data Source Id of the Revefi connection. Can be obtained by going to Revefi (app.revefi.com) and looking for dsId in the URL
+        artifacts:
+          type: array
+          description: List of tables to run monitors for. Maximum of 10 artifacts.
+          required: true
+          maxItems: 10
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/Artifact'
+        monitorIds:
+          type: array
+          description: Optional list of monitor IDs to run. If not provided, all monitors for the given artifacts will be run.
+          items:
+            type: integer
+            format: int64
+        backfill:
+          type: boolean
+          example: false
+          default: false
+          description: Optional flag to backfill historical data
+        dryRun:
+          type: boolean
+          example: false
+          default: false
+          description: Optional flag to run monitors in dry-run mode without persisting results
+      xml:
+        name: runMonitorsRequest
+  securitySchemes:
+    api_key:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-bearer-format: bearer
+x-readme:
+  explorer-enabled: true
+  proxy-enabled: true

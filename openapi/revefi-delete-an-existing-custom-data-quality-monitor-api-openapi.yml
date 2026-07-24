@@ -1,0 +1,48 @@
+openapi: 3.1.0
+info:
+  title: Data Quality Monitors Create a Custom Data Quality Monitor Delete an existing Custom Data Quality Monitor API
+  description: Revefi's Public API Spec
+  version: 1.0.1
+servers:
+- url: https://gateway.revefi.com/api/v1/
+tags:
+- name: Delete an existing Custom Data Quality Monitor
+paths:
+  /monitor:
+    delete:
+      tags:
+      - Delete an existing Custom Data Quality Monitor
+      summary: Delete an existing Custom Data Quality Monitor by Id
+      description: Delete an existing custom Data Quality monitor from Revefi
+      operationId: deleteMonitor
+      security:
+      - api_key: []
+      parameters:
+      - name: monitorId
+        in: query
+        description: Id of the monitor to be deleted
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Successful operation
+        '400':
+          description: Validation exception
+        '401':
+          description: Invalid API access token
+        '403':
+          description: Insufficient permissions for the API call
+        '429':
+          description: Number of requests sent exceed the rate limit
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-bearer-format: bearer
+x-readme:
+  explorer-enabled: true
+  proxy-enabled: true
