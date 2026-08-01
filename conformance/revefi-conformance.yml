@@ -1,0 +1,38 @@
+generated: '2026-07-20'
+method: searched
+source:
+- https://docs.revefi.com/docs/security-and-compliance
+- openapi/revefi-data-quality-monitors-openapi-original.yml
+compliance:
+  program_published: true
+  docs: https://docs.revefi.com/docs/security-and-compliance
+  certifications:
+  - name: SOC 2 Type II
+    status: certified
+    notes: Regular third-party pen-tests; report available upon request.
+  - name: HIPAA
+    status: compliant
+    notes: Reports available upon request.
+  data_practices:
+  - Encryption at rest (AES-256)
+  - Encryption in transit (TLS 1.2+)
+  - Metadata / query-log / aggregated-statistics only; no PII or individual records extracted
+standards:
+- id: oauth2-oidc
+  conforms: true
+  evidence: >-
+    Platform sign-in uses SSO (Google Workspace, Entra-ID, Okta SAML) via an
+    Auth0-backed OIDC provider at auth.revefi.com publishing an
+    openid-configuration discovery document.
+- id: api-key-bearer
+  conforms: true
+  evidence: OpenAPI securityScheme api_key (apiKey in header Authorization, bearer format).
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Error responses are status-only; no application/problem+json schema declared.
+- id: json-api
+  conforms: false
+- id: fhir
+  conforms: false
+- id: scim
+  conforms: false

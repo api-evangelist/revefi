@@ -1,0 +1,20 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Revefi Data Quality Monitors
+  version: 1.0.0
+extends: openapi/revefi-data-quality-monitors-openapi-original.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: revefi
+    x-apievangelist-category: data-quality-observability
+    x-apievangelist-mcp: https://gateway.revefi.com/api/v1/mcp
+    x-apievangelist-docs: https://docs.revefi.com/docs/publicapis
+- target: $.info
+  update:
+    x-rate-limit-note: runMonitors is limited to 10 requests per hour; a 429 signals limit exceeded.
+- target: $.components.securitySchemes.api_key
+  update:
+    description: >-
+      Bearer API access token minted in the Revefi app (API User role, Enable
+      API access). READ_WRITE tokens are required for write operations and MCP.

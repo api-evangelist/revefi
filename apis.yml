@@ -1,25 +1,249 @@
 aid: revefi
 name: Revefi
-description: Revefi is a company surfaced as a portfolio company of mayfield and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Revefi is an AI-powered data operations platform that delivers FinOps,
+  observability, and optimization for modern data warehouses and AI/LLM
+  workloads. Its zero-touch "data copilot" (Raden) autonomously monitors data
+  quality, spend, performance, and usage across Snowflake, Databricks, BigQuery,
+  and Redshift, extracting only metadata, query logs, and aggregated statistics
+  (never PII). Revefi exposes a Public API for programmatically managing custom
+  data quality monitors and a hosted Model Context Protocol (MCP) server so AI
+  assistants can query metadata and operate on warehouse data. The company is
+  SOC 2 Type II certified and HIPAA compliant, and is backed by Mayfield.
 url: https://raw.githubusercontent.com/api-evangelist/revefi/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - mayfield
-x-tier: stub
-x-tier-reason: portfolio-lead
-specificationVersion: '0.20'
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+specificationVersion: '0.20'
+image: https://www.revefi.com/favicon.ico
 tags:
-- Company
-apis: []
+- Data
+- Data Quality
+- Data Observability
+- FinOps
+- Cost Optimization
+- Analytics
+- Snowflake
+- Databricks
+- BigQuery
+- Artificial Intelligence
+- MCP
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: revefi:revefi-create-a-custom-data-quality-monitor-api
+  name: Revefi Create a Custom Data Quality Monitor API
+  description: >-
+    The Create a Custom Data Quality Monitor API from Revefi — 1 operation(s) for create a custom data
+    quality monitor.
+  humanURL: https://docs.revefi.com/docs/publicapis
+  baseURL: https://gateway.revefi.com/api/v1/
+  tags:
+  - Create a Custom Data Quality Monitor
+  properties:
+  - type: OpenAPI
+    url: openapi/revefi-create-a-custom-data-quality-monitor-api-openapi.yml
+  - type: Authentication
+    url: authentication/revefi-authentication.yml
+  - type: ErrorCatalog
+    url: errors/revefi-problem-types.yml
+  - type: Conventions
+    url: conventions/revefi-conventions.yml
+  - type: DataModel
+    url: data-model/revefi-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/revefi-lifecycle.yml
+  - type: APIReference
+    url: https://docs.revefi.com/reference/getmonitors
+- aid: revefi:revefi-delete-an-existing-custom-data-quality-monitor-api
+  name: Revefi Delete an existing Custom Data Quality Monitor API
+  description: >-
+    The Delete an existing Custom Data Quality Monitor API from Revefi — 1 operation(s) for delete an
+    existing custom data quality monitor.
+  humanURL: https://docs.revefi.com/docs/publicapis
+  baseURL: https://gateway.revefi.com/api/v1/
+  tags:
+  - Delete an existing Custom Data Quality Monitor
+  properties:
+  - type: OpenAPI
+    url: openapi/revefi-delete-an-existing-custom-data-quality-monitor-api-openapi.yml
+  - type: Authentication
+    url: authentication/revefi-authentication.yml
+  - type: ErrorCatalog
+    url: errors/revefi-problem-types.yml
+  - type: Conventions
+    url: conventions/revefi-conventions.yml
+  - type: DataModel
+    url: data-model/revefi-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/revefi-lifecycle.yml
+  - type: APIReference
+    url: https://docs.revefi.com/reference/getmonitors
+- aid: revefi:revefi-get-custom-data-quality-monitors-api
+  name: Revefi Get Custom Data Quality Monitors API
+  description: >-
+    The Get Custom Data Quality Monitors API from Revefi — 1 operation(s) for get custom data quality
+    monitors.
+  humanURL: https://docs.revefi.com/docs/publicapis
+  baseURL: https://gateway.revefi.com/api/v1/
+  tags:
+  - Get Custom Data Quality Monitors
+  properties:
+  - type: OpenAPI
+    url: openapi/revefi-get-custom-data-quality-monitors-api-openapi.yml
+  - type: Authentication
+    url: authentication/revefi-authentication.yml
+  - type: ErrorCatalog
+    url: errors/revefi-problem-types.yml
+  - type: Conventions
+    url: conventions/revefi-conventions.yml
+  - type: DataModel
+    url: data-model/revefi-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/revefi-lifecycle.yml
+  - type: APIReference
+    url: https://docs.revefi.com/reference/getmonitors
+- aid: revefi:revefi-get-custom-data-quality-monitors-by-artifact-api
+  name: Revefi Get Custom Data Quality Monitors by Artifact API
+  description: >-
+    The Get Custom Data Quality Monitors by Artifact API from Revefi — 1 operation(s) for get custom data
+    quality monitors by artifact.
+  humanURL: https://docs.revefi.com/docs/publicapis
+  baseURL: https://gateway.revefi.com/api/v1/
+  tags:
+  - Get Custom Data Quality Monitors by Artifact
+  properties:
+  - type: OpenAPI
+    url: openapi/revefi-get-custom-data-quality-monitors-by-artifact-api-openapi.yml
+  - type: Authentication
+    url: authentication/revefi-authentication.yml
+  - type: ErrorCatalog
+    url: errors/revefi-problem-types.yml
+  - type: Conventions
+    url: conventions/revefi-conventions.yml
+  - type: DataModel
+    url: data-model/revefi-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/revefi-lifecycle.yml
+  - type: APIReference
+    url: https://docs.revefi.com/reference/getmonitors
+- aid: revefi:revefi-run-monitors-api
+  name: Revefi Run Monitors API
+  description: The Run Monitors API from Revefi — 1 operation(s) for run monitors.
+  humanURL: https://docs.revefi.com/docs/publicapis
+  baseURL: https://gateway.revefi.com/api/v1/
+  tags:
+  - Run Monitors
+  properties:
+  - type: OpenAPI
+    url: openapi/revefi-run-monitors-api-openapi.yml
+  - type: Authentication
+    url: authentication/revefi-authentication.yml
+  - type: ErrorCatalog
+    url: errors/revefi-problem-types.yml
+  - type: Conventions
+    url: conventions/revefi-conventions.yml
+  - type: DataModel
+    url: data-model/revefi-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/revefi-lifecycle.yml
+  - type: APIReference
+    url: https://docs.revefi.com/reference/getmonitors
+- aid: revefi:revefi-update-an-existing-custom-data-quality-monitor-api
+  name: Revefi Update an existing Custom Data Quality Monitor API
+  description: >-
+    The Update an existing Custom Data Quality Monitor API from Revefi — 1 operation(s) for update an
+    existing custom data quality monitor.
+  humanURL: https://docs.revefi.com/docs/publicapis
+  baseURL: https://gateway.revefi.com/api/v1/
+  tags:
+  - Update an existing Custom Data Quality Monitor
+  properties:
+  - type: OpenAPI
+    url: openapi/revefi-update-an-existing-custom-data-quality-monitor-api-openapi.yml
+  - type: Authentication
+    url: authentication/revefi-authentication.yml
+  - type: ErrorCatalog
+    url: errors/revefi-problem-types.yml
+  - type: Conventions
+    url: conventions/revefi-conventions.yml
+  - type: DataModel
+    url: data-model/revefi-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/revefi-lifecycle.yml
+  - type: APIReference
+    url: https://docs.revefi.com/reference/getmonitors
 common:
 - type: Website
   url: https://revefi.com
+- type: DeveloperPortal
+  url: https://docs.revefi.com/docs/getting-started
+- type: Documentation
+  url: https://docs.revefi.com/docs/getting-started
+- type: APIReference
+  url: https://docs.revefi.com/reference/getmonitors
+- type: GettingStarted
+  url: https://docs.revefi.com/docs/publicapis
+- type: Authentication
+  url: authentication/revefi-authentication.yml
+- type: MCPServer
+  url: mcp/revefi-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/revefi-llms.txt
+- type: WellKnown
+  url: well-known/revefi-well-known.yml
+- type: Conventions
+  url: conventions/revefi-conventions.yml
+- type: ErrorCatalog
+  url: errors/revefi-problem-types.yml
+- type: DataModel
+  url: data-model/revefi-data-model.yml
+- type: Overlay
+  url: overlays/revefi-data-quality-monitors-overlay.yaml
+- type: Lifecycle
+  url: lifecycle/revefi-lifecycle.yml
+- type: Conformance
+  url: conformance/revefi-conformance.yml
+- type: Compliance
+  url: https://docs.revefi.com/docs/security-and-compliance
+- type: DomainSecurity
+  url: security/revefi-domain-security.yml
+- type: Blog
+  url: https://www.revefi.com/blog
+- type: Pricing
+  url: https://www.revefi.com/pricing
+- type: SignUp
+  url: https://www.revefi.com/demo
+- type: Login
+  url: https://app.revefi.com
+- type: TermsOfService
+  url: https://www.revefi.com/tos
+- type: PrivacyPolicy
+  url: https://www.revefi.com/privacy
+- type: Support
+  url: https://www.revefi.com/contact
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 15
+  pass: local-v1

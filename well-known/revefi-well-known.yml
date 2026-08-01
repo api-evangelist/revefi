@@ -1,0 +1,29 @@
+generated: '2026-07-20'
+method: searched
+source: live probes of Revefi hosts
+hosts:
+- host: https://auth.revefi.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: revefi-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+- host: https://gateway.revefi.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+- host: https://revefi.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+notes: >-
+  Revefi's identity provider (auth.revefi.com, Auth0-backed) publishes an OIDC
+  discovery document. The API gateway (gateway.revefi.com) and marketing host
+  publish no .well-known documents.

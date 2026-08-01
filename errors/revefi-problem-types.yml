@@ -1,0 +1,32 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/revefi-data-quality-monitors-openapi-original.yml
+format: http-status
+envelope: >-
+  The Public API returns standard HTTP status codes. Error responses are
+  described by status only in the published spec (no application/problem+json
+  schema is declared).
+problems:
+- status: 400
+  title: Validation exception
+  meaning: The request body or query parameters failed validation.
+  applies_to: [getMonitors, getMonitorByArtifact, createMonitor, updateMonitor, deleteMonitor, runMonitors]
+- status: 401
+  title: Invalid API access token
+  meaning: The Authorization bearer token is missing, malformed, or invalid.
+  remediation: Generate a new API access token from the Revefi account settings (API User role).
+  applies_to: [getMonitors, getMonitorByArtifact, createMonitor, updateMonitor, deleteMonitor, runMonitors]
+- status: 403
+  title: Insufficient permissions for the API call
+  meaning: The token's role/permissions do not allow this operation (e.g. a READ token attempting a write).
+  remediation: Ensure the token has the required role; MCP and write operations require a READ_WRITE token.
+  applies_to: [getMonitors, getMonitorByArtifact, createMonitor, updateMonitor, deleteMonitor, runMonitors]
+- status: 404
+  title: Not found
+  meaning: The specified artifact or monitor could not be found.
+  applies_to: [runMonitors]
+- status: 429
+  title: Rate limit exceeded
+  meaning: The number of requests sent exceeded the rate limit. runMonitors is limited to 10 requests per hour.
+  remediation: Back off and retry after the rate-limit window.
+  applies_to: [getMonitors, getMonitorByArtifact, createMonitor, updateMonitor, deleteMonitor, runMonitors]

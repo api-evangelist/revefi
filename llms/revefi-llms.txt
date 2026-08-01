@@ -1,0 +1,71 @@
+# Revefi Documentation
+
+> Documentation for Revefi
+
+## Guides
+- [Getting Started with Revefi](https://docs.revefi.com/docs/getting-started.md): Revefi Data Operations Cloud is your zero-touch copilot for all your data needs: quality, spend, performance, and usage.
+- [Security and Compliance](https://docs.revefi.com/docs/security-and-compliance.md)
+- [Search](https://docs.revefi.com/docs/search.md): Revefi has a powerful search engine that allows you to search and navigate easily with ease.
+- [System Monitors](https://docs.revefi.com/docs/system-monitors.md): Revefi automatically creates system monitors for datasets. This page describes what those system monitors are.
+- [Custom Monitors](https://docs.revefi.com/docs/custom-monitors.md): How to create and use Custom Monitors in Revefi
+- [Notification Channels](https://docs.revefi.com/docs/notificationschannels.md): Configure and manage notification channels in Revefi to receive alerts and updates.
+- [Discovery Schedules](https://docs.revefi.com/docs/discovery-schedule.md): This page lists Revefi's discovery schedules: it kicks off discovery on new connections, at scheduled intervals, and automatically when you grant additional permissions.
+- [User Preferences](https://docs.revefi.com/docs/user-preferences.md): Use **User Preferences** to tailor Revefi to how you work. In **Default Landing Page**, pick where you want to land right after logging in so your most important view is always first. Fine-tune what you see on the Feed with **Feed Preferences**, and switch between light and dark mode anytime in **Theme Preferences**.
+- [Revefi for Snowflake](https://docs.revefi.com/docs/using-revefi-snowflake.md): Revefi helps teams optimize Snowflake costs, improve warehouse efficiency, and enforce FinOps best practices—without manual monitoring. With clear visibility, intelligent recommendations, and automated guardrails, Revefi makes it easy to keep Snowflake fast, efficient, and cost-effective.
+- [Usage → Warehouse](https://docs.revefi.com/docs/snowflake-usage-warehouses-overview.md): Monitor and analyze Snowflake warehouses.
+- [Usage → User](https://docs.revefi.com/docs/snowflake-usage-user.md): Analyze Snowflake usage patterns by user to understand who is consuming resources and identify optimization opportunities.
+- [Usage → Table](https://docs.revefi.com/docs/snowflake-usage-table.md): Analyze Snowflake usage patterns by table to see which tables are queried, how often, at what cost, and to find tables that are updated but not queried or queried but not updated.
+- [Revefi for BigQuery](https://docs.revefi.com/docs/using-revefi-bigquery.md): Revefi helps teams optimize BigQuery costs, improve query efficiency, and enforce FinOps best practices—without manual monitoring. With clear visibility, intelligent recommendations, and automated guardrails, Revefi makes it easy to keep BigQuery fast, efficient, and cost-effective.
+- [Usage → Project](https://docs.revefi.com/docs/bigquery-usage-project.md): Monitor BigQuery project-level usage, costs, and identify saving opportunities across your entire data estate.
+- [Usage → User](https://docs.revefi.com/docs/bigquery-usage-user.md): Analyze BigQuery usage patterns by user and service account to understand who is consuming resources and identify optimization opportunities.
+- [Usage → Table](https://docs.revefi.com/docs/bigquery-usage-table.md): Analyze BigQuery table access patterns, identify optimization opportunities, and find candidates for deprecation or cleanup.
+- [Usage → Query](https://docs.revefi.com/docs/bigquery-usage-query.md): Analyze BigQuery query patterns, compare query performance, and identify optimization opportunities at the query level.
+- [Usage → Failures](https://docs.revefi.com/docs/bigquery-usage-failures.md): Monitor and analyze failed BigQuery queries to reduce wasted resources and improve reliability.
+- [Snowflake](https://docs.revefi.com/docs/snowflake.md): This guide explains how to create a read-only service account (metadata access only) for Revefi on Snowflake.
+- [Snowflake Editions](https://docs.revefi.com/docs/snowflake-editions.md)
+- [Snowflake Revefi Integration FAQ](https://docs.revefi.com/docs/snowflake-faq.md): Frequently asked questions about connecting Snowflake to Revefi and common setup issues.
+- [Automatic Warehouse Management: Sizing Constraints](https://docs.revefi.com/docs/warehouse-constraints.md): Set hard boundaries on warehouse sizes and cluster counts for Revefi auto-managed warehouses.
+- [Automatic Warehouse Management: Schedule Overrides](https://docs.revefi.com/docs/warehouse-overrides.md): Lock in a specific warehouse size for recurring time windows on Revefi auto-managed warehouses.
+- [Add New Warehouse for Auto-Management](https://docs.revefi.com/docs/add-warehouse-auto-management.md): Grant Revefi permissions to monitor and auto-manage a new Snowflake warehouse on an existing account.
+- [Configuring Snowflake PrivateLink](https://docs.revefi.com/docs/snowflake-aws-privatelink.md): The following steps walk you through the setup of an AWS-hosted Snowflake PrivateLink endpoint for Revefi app.
+- [Revefi recommendations for Snowflake](https://docs.revefi.com/docs/snowflake-recommendation.md): Recommendations and best-practice settings for Snowflake warehouses, including auto suspend time and SQL execution timeout, to optimize cost and performance.
+- [BigQuery](https://docs.revefi.com/docs/bigquery.md): This guide explains how to create a read-only service account (metadata access only) for Revefi on BigQuery.
+- [BigQuery - Revefi Roles](https://docs.revefi.com/docs/bigquery-roles.md): This guide explains how to configure fine-grained BigQuery roles and permissions for Revefi, enabling granular access control across your projects.
+- [BigQuery Revefi Integration FAQ](https://docs.revefi.com/docs/bigquery-faq.md): Frequently asked questions about connecting BigQuery to Revefi and common setup issues.
+- [Redshift](https://docs.revefi.com/docs/redshift.md): This guide explains how to create a read-only service account (metadata access only) for Revefi on Redshift.
+- [Databricks](https://docs.revefi.com/docs/databricks.md)
+- [Configuring Databricks PrivateLink on Azure](https://docs.revefi.com/docs/databricks-azure-privatelink.md): The following steps walk you through the setup of an Azure-hosted Databricks PrivateLink endpoint for Revefi app.
+- [Slack](https://docs.revefi.com/docs/slack.md): Revefi seamlessly integrates with Slack, allowing you to receive alerts in any channel within your workspace. This guide will walk you through the process of setting up Slack notifications for Revefi, enabling efficient triaging and collaborative workflows.
+- [Microsoft Teams](https://docs.revefi.com/docs/microsoft-teams.md): Connect Revefi to your Microsoft Teams to receive alerts in any channel within your workspace. This guide will walk you through the process of setting up Microsoft Teams webhook for Revefi.
+- [Custom Webhook](https://docs.revefi.com/docs/custom-webhook.md): Send Revefi incident notifications custom webhook endpoints. Use Custom Webhook when your notification platform isn't natively supported by Revefi.
+- [ThoughtSpot](https://docs.revefi.com/docs/thoughtspot.md): Integrating Revefi with ThoughtSpot enables seamless tracking of metadata and lineage for liveboards, visualizations, answers, and worksheets.
+- [Tableau](https://docs.revefi.com/docs/tableau.md): Integrating Revefi with Tableau enables seamless tracking of metadata and lineage for workbooks and views.
+- [Looker](https://docs.revefi.com/docs/looker.md): Integrating Revefi with Looker enables seamless tracking of metadata and lineage of visualizations and looks.
+- [PowerBI](https://docs.revefi.com/docs/powerbi.md): Integrating Revefi with PowerBI enables seamless tracking of metadata and lineage of Semantic Models, Dashboards, Reports, and Charts.
+- [Alation](https://docs.revefi.com/docs/alation.md): Integrating Revefi with Alation provides information about table health, usage and performance directly in your Alation catalog!
+- [Atlan](https://docs.revefi.com/docs/atlan.md): Integrating Revefi with Atlan provides information about table health, usage, and performance directly in your Atlan catalog!
+- [dbt Cloud](https://docs.revefi.com/docs/dbt-cloud.md): Revefi integrates with dbt Cloud to help connect the dots between your data issues and your dbt models (e.g. model code changes).
+- [dbt Core](https://docs.revefi.com/docs/dbt-core.md): Revefi integrates with dbt Core to help connect the dots between your data issues and your dbt models (e.g. model code changes).
+- [Cloud Composer](https://docs.revefi.com/docs/composer.md): Revefi integrates with Cloud Composer to help connect the dots between your data issues and your Cloud Composer DAGs.
+- [JIRA](https://docs.revefi.com/docs/jira.md): This integration enables Revefi users to effortlessly generate incidents in JIRA.
+- [ServiceNow](https://docs.revefi.com/docs/servicenow.md): This integration enables Revefi users to effortlessly generate incidents in ServiceNow using OAuth 2.0 or Basic authentication.
+- [Notification Channel](https://docs.revefi.com/docs/servicenow-channel.md): Create ServiceNow channel to receive notifications from Revefi.
+- [PagerDuty](https://docs.revefi.com/docs/pagerduty.md): This integration enables Revefi to create incidents in PagerDuty.
+- [Google Gemini Authentication for Raden](https://docs.revefi.com/docs/google-gemini.md): Revefi supports both API Key and Service Account based Authentication for secure integration of Google Gemini for Raden.
+- [Authentication](https://docs.revefi.com/docs/authentication.md): Revefi supports both Single Sign-On (SSO) and passcode-based authentication for secure access to the platform.
+- [Scheduled Maintenance](https://docs.revefi.com/docs/scheduled-maintenance.md): Scheduled app mainteance time window
+- [Authorized Sub-processors](https://docs.revefi.com/docs/authorized-sub-processors.md): Sub-processors authorized by Revefi
+- [Public APIs](https://docs.revefi.com/docs/publicapis.md): Revefi has a suite of APIs that can be integrated to directly to manage custom data quality monitors programmatically
+- [API Enumerations](https://docs.revefi.com/docs/apienumerations.md): Description of different enumerations used in the API
+- [MCP Setup](https://docs.revefi.com/docs/mcp-setup.md): Connect AI assistants (Claude Code, Cursor, Claude Desktop, etc.) to Revefi using the Model Context Protocol (MCP).
+- [Roles](https://docs.revefi.com/docs/roles.md): Revefi provides role-based access control (RBAC) to help manage user permissions and access levels across different features of the platform.
+- [New Revefi Account](https://docs.revefi.com/docs/new-account.md): Customers can create create new Revefi accounts (tenants) to monitor additional Snowflake/Databricks/BigQuery accounts.
+- [Users](https://docs.revefi.com/docs/user.md): Admins can add more users for access to Revefi
+
+## API Reference
+- [Get Custom Data Quality Monitors by Ids](https://docs.revefi.com/reference/getmonitors.md): Fetch existing custom Data Quality monitors in Revefi
+- [Get Custom Data Quality Monitors by Artifact](https://docs.revefi.com/reference/getmonitorbyartifact.md): Fetch existing custom Data Quality monitors for a specific table in Revefi
+- [Create a Custom Data Quality Monitor](https://docs.revefi.com/reference/createmonitor.md): Create custom Data Quality Monitor in Revefi
+- [Update an existing Custom Data Quality Monitor](https://docs.revefi.com/reference/updatemonitor.md): Update existing custom Data Quality Monitor in Revefi
+- [Delete an existing Custom Data Quality Monitor by Id](https://docs.revefi.com/reference/deletemonitor.md): Delete an existing custom Data Quality monitor from Revefi
+- [Run Monitors for Artifacts](https://docs.revefi.com/reference/runmonitors.md): Trigger runs for monitors associated with the specified artifacts in Revefi

@@ -1,0 +1,47 @@
+generated: '2026-07-20'
+method: derived
+source:
+- openapi/revefi-data-quality-monitors-openapi-original.yml
+- https://docs.revefi.com/docs/publicapis
+authentication:
+  style: bearer-token
+  header: Authorization
+  scheme: Bearer <api-access-token>
+  notes: >-
+    Tokens are minted in the Revefi app (API User role, Enable API access).
+    Read/write scope on the token (READ_WRITE) gates write and MCP operations.
+  cross_reference: authentication/revefi-authentication.yml
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency-key header or parameter is documented in the OpenAPI or the
+    public API docs.
+pagination:
+  style: limit-offset
+  params:
+    limit: { in: query, default: 10, minimum: 1, maximum: 50 }
+    offset: { in: query }
+  applies_to: [getMonitors, getMonitorByArtifact]
+rate_limiting:
+  signaled: true
+  status_code: 429
+  documented_limits:
+  - operation: runMonitors
+    limit: 10 requests per hour
+  notes: >-
+    A 429 response indicates the rate limit was exceeded; no explicit
+    rate-limit response headers are documented.
+  cross_reference: errors/revefi-problem-types.yml
+content_types:
+  request: [application/json, application/xml]
+  response: [application/json, application/xml]
+versioning:
+  style: uri-path
+  current: v1
+  spec_version: 1.0.1
+  base_url: https://gateway.revefi.com/api/v1/
+  cross_reference: lifecycle/revefi-lifecycle.yml
+error_envelope:
+  style: http-status
+  notes: Errors are conveyed by HTTP status code (400/401/403/404/429).
+  cross_reference: errors/revefi-problem-types.yml

@@ -1,0 +1,24 @@
+{
+  "provider": "revefi",
+  "sources": [
+    "revefi-create-a-custom-data-quality-monitor-api-openapi.yml",
+    "revefi-delete-an-existing-custom-data-quality-monitor-api-openapi.yml",
+    "revefi-get-custom-data-quality-monitors-api-openapi.yml",
+    "revefi-get-custom-data-quality-monitors-by-artifact-api-openapi.yml",
+    "revefi-run-monitors-api-openapi.yml",
+    "revefi-update-an-existing-custom-data-quality-monitor-api-openapi.yml"
+  ],
+  "outputs": [
+    "revefi-create-a-custom-data-quality-monitor-api-openapi.yml",
+    "revefi-delete-an-existing-custom-data-quality-monitor-api-openapi.yml",
+    "revefi-get-custom-data-quality-monitors-api-openapi.yml",
+    "revefi-get-custom-data-quality-monitors-by-artifact-api-openapi.yml",
+    "revefi-run-monitors-api-openapi.yml",
+    "revefi-update-an-existing-custom-data-quality-monitor-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

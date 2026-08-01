@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: searched
+source:
+- https://docs.revefi.com/docs/scheduled-maintenance
+- openapi/revefi-data-quality-monitors-openapi-original.yml
+versioning:
+  scheme: uri-path
+  current: v1
+  spec_version: 1.0.1
+  base_url: https://gateway.revefi.com/api/v1/
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No formal deprecation policy or RFC 8594 Sunset/Deprecation header support documented.
+sla:
+  url: null
+  uptime_target: null
+maintenance:
+  docs: https://docs.revefi.com/docs/scheduled-maintenance
+  notes: Revefi documents a scheduled application maintenance time window.
+status_page: null
+deprecated_operations: []

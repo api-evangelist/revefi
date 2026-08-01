@@ -1,0 +1,41 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/revefi-data-quality-monitors-openapi-original.yml
+entities:
+- name: Monitor
+  description: A custom data quality monitor defined on a warehouse table (artifact).
+  key_fields: [monitorId]
+- name: Artifact
+  description: A warehouse table identified by databaseName + schemaName + tableName.
+  key_fields: [databaseName, schemaName, tableName]
+- name: MonitorMetric
+  description: The metric a monitor evaluates (e.g. null count, distinct value count).
+- name: SqlMonitorInstance
+  description: A SQL-based monitor instance (SqlSpecName type, evaluation type, threshold).
+- name: StaticThreshold
+  description: Static threshold configuration (comparison op, value type, limits).
+- name: TimeOfDay
+  description: Time-of-day configuration for monitor collection scheduling.
+relationships:
+- from: Monitor
+  to: Artifact
+  type: belongs_to
+  via: artifact
+- from: Monitor
+  to: MonitorMetric
+  type: has_many
+  via: monitor
+- from: SqlMonitorInstance
+  to: StaticThreshold
+  type: has_one
+  via: staticThreshold
+enumerations:
+- CollectionFrequency
+- SqlSpecName
+- StaticThresholdComp
+- StaticThresholdValueType
+- SqlMetricEvaluationType
+notes: >-
+  Derived from OpenAPI components.schemas. The domain centers on data-quality
+  Monitors bound to warehouse Artifacts (tables), evaluated on a schedule
+  against metrics and thresholds.

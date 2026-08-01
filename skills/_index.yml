@@ -1,0 +1,8 @@
+generated: '2026-07-20'
+method: generated
+source: openapi/revefi-data-quality-monitors-openapi-original.yml
+skills:
+- file: revefi-manage-data-quality-monitors.md
+  name: Manage Revefi custom data quality monitors
+  api: openapi/revefi-data-quality-monitors-openapi-original.yml
+  operations: [getMonitorByArtifact, createMonitor, getMonitors, updateMonitor, runMonitors, deleteMonitor]
