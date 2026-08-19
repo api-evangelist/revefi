@@ -5,13 +5,10 @@ source: https://docs.revefi.com/docs/mcp-setup
 server:
   name: revefi
   transport: http
-  description: >-
-    Revefi exposes a hosted Model Context Protocol (MCP) HTTP endpoint that lets
-    MCP-compatible clients (Claude Code, Cursor, Claude Desktop, etc.) call
-    Revefi tools to query metadata and operate on warehouse data directly from
-    the assistant. It authenticates with the same API access token used for the
-    Public APIs and operates against the warehouse configured for the tenant
-    (Snowflake or Databricks).
+  description: Revefi exposes a hosted Model Context Protocol (MCP) HTTP endpoint that lets MCP-compatible
+    clients (Claude Code, Cursor, Claude Desktop, etc.) call Revefi tools to query metadata and operate
+    on warehouse data directly from the assistant. It authenticates with the same API access token used
+    for the Public APIs and operates against the warehouse configured for the tenant (Snowflake or Databricks).
   endpoints:
   - environment: Production
     url: https://gateway.revefi.com/api/v1/mcp
@@ -20,9 +17,8 @@ server:
   authentication:
     scheme: bearer
     header: Authorization
-    note: >-
-      Authorization: Bearer <token> on every request. Token must be READ_WRITE.
-      Same API access token as the Public APIs (API User role required).
+    note: 'Authorization: Bearer <token> on every request. Token must be READ_WRITE. Same API access token
+      as the Public APIs (API User role required).'
   spec_transport: streamable-http
   supported_warehouses:
   - Snowflake
@@ -31,7 +27,13 @@ clients_documented:
 - Claude Code
 - Cursor
 - Claude Desktop
-notes: >-
-  The published tool list is not enumerated in the public docs; tools query
-  metadata and operate on the tenant's configured warehouse. This is a
-  first-party, provider-hosted MCP server (not derived from OpenAPI).
+notes: The published tool list is not enumerated in the public docs; tools query metadata and operate
+  on the tenant's configured warehouse. This is a first-party, provider-hosted MCP server (not derived
+  from OpenAPI).
+deployment:
+  mode: remote
+  endpoint: https://gateway.revefi.com/api/v1/mcp
+  verified: probed
+  probe: wall
+  checked: '2026-08-12'
+  source: catalog MCP census

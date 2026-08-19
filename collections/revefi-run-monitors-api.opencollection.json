@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Data Quality Monitors Create a Custom Data Quality Monitor Run Monitors API",
+    "version": "1.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Run Monitors",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Run Monitors for Artifacts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://gateway.revefi.com/api/v1/monitor/run",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Trigger runs for monitors associated with the specified artifacts. Rate-limited to 10 requests per hour."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,381 @@
+{
+  "item": [
+    {
+      "id": "c0e1ed6a-b760-4bce-96f4-4204f979252f",
+      "name": "Run Monitors",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "34a6317b-66b8-429a-b6ca-1dfdf0a1a98f",
+          "name": "Run Monitors for Artifacts",
+          "request": {
+            "name": "Run Monitors for Artifacts",
+            "description": {
+              "content": "Trigger runs for monitors associated with the specified artifacts. Rate-limited to 10 requests per hour.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "monitor",
+                "run"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dataSourceId\": \"<long>\",\n  \"artifacts\": [\n    {\n      \"databaseName\": \"<string>\",\n      \"schemaName\": \"<string>\",\n      \"tableName\": \"<string>\"\n    }\n  ],\n  \"monitorIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"backfill\": false,\n  \"dryRun\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "83df2e8c-eb89-47c7-bb1e-14e331f6785f",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "monitor",
+                    "run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataSourceId\": 7,\n  \"artifacts\": [\n    {\n      \"databaseName\": \"string\",\n      \"schemaName\": \"string\",\n      \"tableName\": \"string\"\n    }\n  ],\n  \"monitorIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"backfill\": false,\n  \"dryRun\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "761dc7de-40a1-43b5-a2b2-f75d23a4711c",
+              "name": "Validation exception",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "monitor",
+                    "run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataSourceId\": 7,\n  \"artifacts\": [\n    {\n      \"databaseName\": \"string\",\n      \"schemaName\": \"string\",\n      \"tableName\": \"string\"\n    }\n  ],\n  \"monitorIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"backfill\": false,\n  \"dryRun\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cb67c4b8-79e4-4054-aa55-97d66f14d654",
+              "name": "Invalid API access token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "monitor",
+                    "run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataSourceId\": 7,\n  \"artifacts\": [\n    {\n      \"databaseName\": \"string\",\n      \"schemaName\": \"string\",\n      \"tableName\": \"string\"\n    }\n  ],\n  \"monitorIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"backfill\": false,\n  \"dryRun\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "063dac05-4bb3-4efc-a41e-8d0c1f77931a",
+              "name": "Insufficient permissions for the API call",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "monitor",
+                    "run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataSourceId\": 7,\n  \"artifacts\": [\n    {\n      \"databaseName\": \"string\",\n      \"schemaName\": \"string\",\n      \"tableName\": \"string\"\n    }\n  ],\n  \"monitorIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"backfill\": false,\n  \"dryRun\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7b2dc83a-373d-494c-987e-8cf7c100f074",
+              "name": "Artifact not found in Revefi",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "monitor",
+                    "run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataSourceId\": 7,\n  \"artifacts\": [\n    {\n      \"databaseName\": \"string\",\n      \"schemaName\": \"string\",\n      \"tableName\": \"string\"\n    }\n  ],\n  \"monitorIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"backfill\": false,\n  \"dryRun\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9c7430e0-a595-40c0-b5c2-c0538359452f",
+              "name": "Number of requests sent exceed the rate limit",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "monitor",
+                    "run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataSourceId\": 7,\n  \"artifacts\": [\n    {\n      \"databaseName\": \"string\",\n      \"schemaName\": \"string\",\n      \"tableName\": \"string\"\n    }\n  ],\n  \"monitorIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"backfill\": false,\n  \"dryRun\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://gateway.revefi.com/api/v1/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "30cabe62-22f3-47d9-b561-811416abf675",
+    "name": "Data Quality Monitors Create a Custom Data Quality Monitor Run Monitors API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Revefi's Public API Spec",
+      "type": "text/plain"
+    }
+  }
+}

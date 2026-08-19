@@ -1,0 +1,67 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Data Quality Monitors Create a Custom Data Quality Monitor Get Custom Data Quality Monitors by Artifact API",
+    "version": "1.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Custom Data Quality Monitors by Artifact",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Custom Data Quality Monitors by Artifact",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://gateway.revefi.com/api/v1/monitorByArtifact",
+            "params": [
+              {
+                "name": "databaseName",
+                "value": "",
+                "type": "query",
+                "description": "Name of the database for the table"
+              },
+              {
+                "name": "schemaName",
+                "value": "",
+                "type": "query",
+                "description": "Name of the schema for the table"
+              },
+              {
+                "name": "tableName",
+                "value": "",
+                "type": "query",
+                "description": "Name of the table"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Limit on the number of monitors to fetch"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of monitors to skip before starting to collect the result set"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Fetch existing custom Data Quality monitors for a specific table in Revefi"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
