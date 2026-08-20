@@ -80,7 +80,8 @@ apis:
     existing custom data quality monitor.
   humanURL: https://docs.revefi.com/docs/publicapis
   baseURL: https://gateway.revefi.com/api/v1/
-  tags:
+  tags: []
+  tags_raw:
   - Delete an existing Custom Data Quality Monitor
   properties:
   - type: OpenAPI
@@ -128,7 +129,8 @@ apis:
     quality monitors by artifact.
   humanURL: https://docs.revefi.com/docs/publicapis
   baseURL: https://gateway.revefi.com/api/v1/
-  tags:
+  tags: []
+  tags_raw:
   - Get Custom Data Quality Monitors by Artifact
   properties:
   - type: OpenAPI
@@ -174,7 +176,8 @@ apis:
     existing custom data quality monitor.
   humanURL: https://docs.revefi.com/docs/publicapis
   baseURL: https://gateway.revefi.com/api/v1/
-  tags:
+  tags: []
+  tags_raw:
   - Update an existing Custom Data Quality Monitor
   properties:
   - type: OpenAPI
