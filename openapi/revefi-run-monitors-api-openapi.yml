@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Data Quality Monitors Create a Custom Data Quality Monitor Run Monitors API
+  title: Data Quality Monitors Run Monitors API
   description: Revefi's Public API Spec
   version: 1.0.1
 servers:
