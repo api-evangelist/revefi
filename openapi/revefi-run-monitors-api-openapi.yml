@@ -42,21 +42,6 @@ paths:
           description: Number of requests sent exceed the rate limit
 components:
   schemas:
-    Artifact:
-      type: object
-      properties:
-        databaseName:
-          type: string
-          description: Name of the database for the table on which data quality monitor needs to be added
-          required: true
-        schemaName:
-          type: string
-          description: Name of the schema for the table on which data quality monitor needs to be added
-          required: true
-        tableName:
-          type: string
-          description: Name of the table on which data quality monitor needs to be added
-          required: true
     RunMonitorsRequest:
       type: object
       properties:
@@ -92,6 +77,21 @@ components:
           description: Optional flag to run monitors in dry-run mode without persisting results
       xml:
         name: runMonitorsRequest
+    Artifact:
+      type: object
+      properties:
+        databaseName:
+          type: string
+          description: Name of the database for the table on which data quality monitor needs to be added
+          required: true
+        schemaName:
+          type: string
+          description: Name of the schema for the table on which data quality monitor needs to be added
+          required: true
+        tableName:
+          type: string
+          description: Name of the table on which data quality monitor needs to be added
+          required: true
   securitySchemes:
     api_key:
       type: apiKey
