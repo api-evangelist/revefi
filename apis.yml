@@ -208,6 +208,9 @@ apis:
   - type: APIReference
     url: https://docs.revefi.com/reference/getmonitors
 common:
+- type: CapabilityMap
+  url: capabilities/revefi-capability-edges.yml
+  name: Revefi Business Capability Map
 - type: Website
   url: https://revefi.com
 - type: DeveloperPortal

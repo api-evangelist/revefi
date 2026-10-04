@@ -1,0 +1,61 @@
+slug: revefi
+provider: Revefi
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 5
+edges:
+- tag: Create a Custom Data Quality Monitor
+  spec_file: revefi-create-a-custom-data-quality-monitor-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.9
+  evidence: POST /monitor createMonitor Create a Custom Data Quality Monitor; schemas MonitorMetric, StaticThreshold,
+    SqlMetricEvaluationType
+  reason: Operation defines data quality monitors with metrics and thresholds over warehouse artefacts
+    — plainly data quality monitoring and profiling.
+- tag: Get Custom Data Quality Monitors
+  spec_file: revefi-get-custom-data-quality-monitors-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.9
+  evidence: GET /monitor getMonitors Get Custom Data Quality Monitors by Ids; schemas MonitorMetric, StaticThresholdComp
+  reason: Retrieval of configured data quality monitors and their metrics/thresholds — data quality monitoring
+    capability.
+- tag: Get Custom Data Quality Monitors by Artifact
+  spec_file: revefi-get-custom-data-quality-monitors-by-artifact-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.88
+  evidence: GET /monitorByArtifact getMonitorByArtifact Get Custom Data Quality Monitors by Artifact
+  reason: Operations retrieve custom data quality monitors (with thresholds and metrics) over warehouse
+    artifacts — data quality monitoring/remediation of data assets.
+- tag: Update an existing Custom Data Quality Monitor
+  spec_file: revefi-update-an-existing-custom-data-quality-monitor-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.88
+  evidence: PATCH /monitor updateMonitor Update an existing Custom Data Quality Monitor
+  reason: Maintains data quality monitor definitions (thresholds, metrics, frequency) — data quality monitoring
+    configuration.
+- tag: Delete an existing Custom Data Quality Monitor
+  spec_file: revefi-delete-an-existing-custom-data-quality-monitor-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.85
+  evidence: DELETE /monitor deleteMonitor Delete an existing Custom Data Quality Monitor by Id
+  reason: Lifecycle management of data quality monitors on data warehouses; same capability as monitor
+    creation, slightly thinner schema evidence.
