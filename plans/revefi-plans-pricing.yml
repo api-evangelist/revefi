@@ -1,0 +1,108 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://www.revefi.com/pricing
+sources:
+- https://www.revefi.com/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: negotiated
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: false
+note: No numeric prices; paid tiers are a percentage of data platform spend with 'Contact Us'. Only a
+  free Starter tier limited to annual spend under $50K.
+plan_count: 7
+plans:
+- name: Starter (Data)
+  price_text: Free
+  period: none
+  included_quota: Cost Optimization, Data Observability & Quality, Self-Serve Support; Combined annual
+    spend <$50K
+- name: FinOps (Data)
+  price_text: Based on % of data platform spend. Contact our experts
+  period: none
+  included_quota: Cost Optimization, Standard & Enterprise Support, No usage limits
+- name: DataOps
+  price_text: Based on % of data platform spend. Contact our experts
+  period: none
+  included_quota: Data Observability & Quality, Standard & Enterprise Support, No usage limits
+- name: All (Data)
+  price_text: Based on % of data platform spend. Contact our experts
+  period: none
+  included_quota: Cost Optimization, Data Observability & Quality, Enterprise Support
+- name: Observability & Operations (AI)
+  price_text: Contact our experts
+  period: none
+  included_quota: LLM observability, optimization, policy enforcement, OTEL connector, SDK
+- name: FinOps (AI)
+  price_text: Contact our experts
+  period: none
+  included_quota: Budgeting & forecasting, spend limits, approval workflow, budget enforcement
+- name: All (AI)
+  price_text: Contact our experts
+  period: none
+  included_quota: Everything in Observability & Operations and FinOps
+rate_limit_statements:
+- Combined annual spend <$50K
+- No usage limits
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models: []
+  units: []
+  plans:
+  - name: Starter (Data)
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: FinOps (Data)
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: DataOps
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: All (Data)
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: Observability & Operations (AI)
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: FinOps (AI)
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: All (AI)
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
