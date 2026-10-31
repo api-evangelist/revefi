@@ -64,6 +64,130 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Revefi is a company surfaced as a portfolio company of mayfield and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Revefi is an AI-powered data operations platform that delivers FinOps, observability, and optimization for modern data warehouses and AI/LLM workloads. Its zero-touch "data copilot" (Raden) autonomously monitors data quality, spend, performance, and usage across Snowflake, Databricks, BigQuery, and Redshift, extracting only metadata, query logs, and aggregated statistics (never PII). Revefi exposes a Public API for programmatically managing custom data quality monitors and a hosted Model Context Protocol (MCP) server so AI assistants can query metadata and operate on warehouse data. The company is SOC 2 Type II certified and HIPAA compliant, and is backed by Mayfield.
 
-Backed by: mayfield — https://revefi.com
+**Areas:** Data · Data Quality · Data Observability · FinOps · Cost Optimization · Analytics · Snowflake · Databricks · BigQuery · Artificial Intelligence · MCP
+
+## Revefi on APIs.io
+
+Everything profiled for Revefi is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/revefi/](https://apis.io/providers/revefi/)** — or go straight to one of the APIs or properties below.
+
+### APIs (6)
+
+- [Revefi Create a Custom Data Quality Monitor API](https://apis.io/apis/revefi/revefi-create-a-custom-data-quality-monitor-api/) — The Create a Custom Data Quality Monitor API from Revefi — 1 operation(s) for create a custom data quality monitor.
+- [Revefi Delete an existing Custom Data Quality Monitor API](https://apis.io/apis/revefi/revefi-delete-an-existing-custom-data-quality-monitor-api/) — The Delete an existing Custom Data Quality Monitor API from Revefi — 1 operation(s) for delete an existing custom data quality monitor.
+- [Revefi Get Custom Data Quality Monitors API](https://apis.io/apis/revefi/revefi-get-custom-data-quality-monitors-api/) — The Get Custom Data Quality Monitors API from Revefi — 1 operation(s) for get custom data quality monitors.
+- [Revefi Get Custom Data Quality Monitors by Artifact API](https://apis.io/apis/revefi/revefi-get-custom-data-quality-monitors-by-artifact-api/) — The Get Custom Data Quality Monitors by Artifact API from Revefi — 1 operation(s) for get custom data quality monitors by artifact.
+- [Revefi Run Monitors API](https://apis.io/apis/revefi/revefi-run-monitors-api/) — The Run Monitors API from Revefi — 1 operation(s) for run monitors.
+- [Revefi Update an existing Custom Data Quality Monitor API](https://apis.io/apis/revefi/revefi-update-an-existing-custom-data-quality-monitor-api/) — The Update an existing Custom Data Quality Monitor API from Revefi — 1 operation(s) for update an existing custom data quality monitor.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [revefi](https://apis.io/servers/revefi/revefi/)
+
+#### Collections (6)
+
+Postman and Open Collection request collections.
+
+- [Data Quality Monitors Create a Custom Data Quality Monitor API](https://apis.io/collections/revefi/open-revefi-create-a-custom-data-quality-monitor-api/)
+- [Data Quality Monitors Create a Custom Data Quality Monitor Delete an existing Custom Data Quality Monitor API](https://apis.io/collections/revefi/open-revefi-delete-an-existing-custom-data-quality-monitor-api/)
+- [Data Quality Monitors Create a Custom Data Quality Monitor Get Custom Data Quality Monitors API](https://apis.io/collections/revefi/open-revefi-get-custom-data-quality-monitors-api/)
+- [Data Quality Monitors Create a Custom Data Quality Monitor Get Custom Data Quality Monitors by Artifact API](https://apis.io/collections/revefi/open-revefi-get-custom-data-quality-monitors-by-artifact-api/)
+- [Data Quality Monitors Create a Custom Data Quality Monitor Run Monitors API](https://apis.io/collections/revefi/open-revefi-run-monitors-api/)
+- [Data Quality Monitors Create a Custom Data Quality Monitor Update an existing Custom Data Quality Monitor API](https://apis.io/collections/revefi/open-revefi-update-an-existing-custom-data-quality-monitor-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Revefi Data Quality Monitors Overlay](https://apis.io/overlays/revefi/revefi-data-quality-monitors-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Revefi Authentication](https://apis.io/security/revefi/revefi-authentication/)
+- [Revefi Domain Security](https://apis.io/security/revefi/revefi-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Revefi Plans Pricing](https://apis.io/plans/revefi/revefi-plans-pricing/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://revefi.com)
+- [Documentation](https://docs.revefi.com/docs/getting-started)
+- [Getting started](https://docs.revefi.com/docs/publicapis)
+- [API reference](https://docs.revefi.com/reference/getmonitors)
+- [Pricing](https://www.revefi.com/pricing)
+- [Sign up](https://www.revefi.com/demo)
+- [Support](https://www.revefi.com/contact)
+- [Blog](https://www.revefi.com/blog)
+- [Compliance](https://docs.revefi.com/docs/security-and-compliance)
+- [Terms of service](https://www.revefi.com/tos)
+- [Privacy policy](https://www.revefi.com/privacy)
+
+## API Evangelist rating
+
+**Kin Score 47.9** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 53.6 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 39.9 |
+| Access clarity | 80.3 |
+
+**Agent readiness 41.9** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 25.0** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/revefi/](https://apis.io/providers/revefi/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Revefi: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/revefi/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
